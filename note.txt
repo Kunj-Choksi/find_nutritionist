@@ -1,0 +1,1 @@
+state var to change searchbar beheviour ==> show-search-profile.js

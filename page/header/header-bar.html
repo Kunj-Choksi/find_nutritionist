@@ -1,0 +1,189 @@
+<div class="section-header">
+    <div class="wrap">
+        <header ng-controller="loginController">
+            <div class="header-left">
+                <i class="fa fa-bars" ng-click="openSidepannel=true"></i>
+                <a class="logo">
+                    <img src="img/header-logo.png" height="50px" width="130px" alt="LOGO HERE" ui-sref="home" style="cursor: pointer;">
+                </a>
+            </div>
+
+            <div class="search-area" ng-show="state">
+                <div ng-include="'page/header/search-tab.html'"></div>
+            </div>
+
+            <div class="nav-login">
+                <a href="javascript:void(0)" ng-click="loginPopup = true">Login / Sign Up</a>
+            </div>
+
+            <div ng-show="loginPopup">
+                <div class="login-popup">
+                    <div class="popup-body">
+
+                        <div class="login-signup-link">
+                            <ul>
+                                <li ng-click="loginBox=true; signupBox=false">
+                                    <a href="">Log In</a>
+                                </li>
+                                <li ng-click="loginBox=false; signupBox=true">
+                                    <a href="">Register</a>
+                                </li>
+                            </ul>
+                            <div class="close-btn" ng-click="loginPopup=false">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div ng-show="loginBox">
+                            <div class="login-box-container">
+                                <form action="">
+                                    <div class="login-field mb20">
+                                        <label class="mb5" for="username">Mobile Number / Email ID</label>
+                                        <input type="text" name="username" placeholder="Mobile Number / Email ID" ng-model="loginName" required>
+                                        <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                                    </div>
+                                    <div class="login-field mb20">
+                                        <label class="mb5" for="password">Password</label>
+                                        <input type="text" name="password" placeholder="Password" ng-model="loginPassword" required>
+                                        <span class="errorMsg" ng-if="wrongPassword">Please enter password!</span>
+                                    </div>
+                                    <div class="login-checkbox mb15">
+                                        <input type="checkbox" name="rememberMe" id="">
+                                        <label for="rememberMe">Remember me for 30 days</label>
+                                    </div>
+                                    <div class="login-checkbox mb20">
+                                        <input type="checkbox" name="loginOtp" id="">
+                                        <label for="loginOtp">Login with OTP insted of password</label>
+                                    </div>
+                                    <div class="btn login-btn mb20">
+                                        <button type="submit" class="btn">Login</button>
+                                    </div>
+
+                                    <div class="or-tab mb20">
+                                        <span>or</span>
+                                    </div>
+
+                                    <div class="social-login">
+                                        <a href="">
+                                            <img src="../img/facebook-img.jpg" height="30px" width="30px" alt="">
+                                            <span>Connect with Facebook</span>
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div ng-show="signupBox">
+                            <div class="signup-box-container">
+                                <div class="box-header">
+                                    <div class="left-area">
+                                        <p>Join</p>
+                                    </div>
+
+                                    <div class="right-area">
+                                        <span>Are you a doctor?</span>
+                                        <a href="">Register Here</a>
+                                    </div>
+
+                                </div>
+                                <div class="box-container">
+                                    <div class="login-field mb10">
+                                        <label for="username" class="mb10">Full Name</label>
+                                        <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                                        <input type="text" name="username" placeholder="Full Name" ng-model="loginName" required>
+                                    </div>
+                                    <div class="login-number mb10">
+                                        <label for="country">Mobile Number</label>
+                                        <div class="countrycode-input">
+                                            <select class="countryCode" id="country" name="country">
+                                                <option selected="" value="IN">+91(IND)</option>
+                                                <option value="SG">+65(SGP)</option>
+                                                <option value="PH">+63(PHL)</option>
+                                                <option value="MY">+60(MYS)</option>
+                                                <option value="ID">+62(IDN)</option>
+                                                <option value="BR">+55(BRA)</option>
+                                                <option value="MX">+52(MEX)</option>
+                                                <option value="AR">+54(ARG)</option>
+                                                <option value="CL">+56(CHL)</option>
+                                                <option value="VN">+84(VNM)</option>
+                                                <option value="AE">+971(UAE)</option>
+                                                <option value="TZ">+255(TZA)</option>
+                                                <option value="US">+1(USA)</option>
+                                            </select>
+                                        </div>
+                                        <div class="contact-number login-field">
+                                            <input type="number" name="contact" class="contactNumber">
+                                        </div>
+                                    </div>
+                                    <div class="login-field mb15">
+                                        <label for="password" class="mb10">Create Password</label>
+                                        <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                                        <input class="mb5" type="text" name="password" placeholder="Password" ng-model="password" required>
+                                        <p class="password-strength">Password Strength: </p>
+                                    </div>
+                                    <div class="login-checkbox mb10">
+                                        <input type="checkbox" name="offerCheckbox">
+                                        <label for="offerCheckbox">Receive relevant offers and promotional communication from Practo</label>
+                                    </div>
+                                    <div class="btn login-btn">
+                                        <button type="submit" class="btn">Send OTP</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="openSidepannel">
+                <div class="side-pannel" ng-class="{'transfom-me': openSidepannel == true}">
+                    <div class="side-pannel-body">
+                        <div class="header-left mb20">
+                            <i class="fa fa-close" ng-click="openSidepannel=false"></i>
+                            <a class="logo">
+                                <img src="img/header-logo.png" height="50px" width="130px" alt="LOGO HERE" ui-sref="home" style="cursor: pointer;">
+                            </a>
+                        </div>
+
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">Book Appoinment</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">Chat with a doctor</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-flask" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">Book Diagnostic test</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">Read Health Articles</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">Order Medicins</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">View medical records</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <img src="../../img/medicin-img.png" width="20px" height="20px" alt="">
+                            <li class="side-pannel-list-item">Read about medicins</li>
+                        </ul>
+                        <ul class="side-pannel-list">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <li class="side-pannel-list-item">Providers</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+    </div>
+</div>

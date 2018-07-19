@@ -1,0 +1,163 @@
+<div>
+    <div ng-include="'page/header/header-bar.html'"></div>
+</div>
+
+<section class="user-section" ng-controller="editUser">
+    <div class="wrap">
+        <div class="profile-header">
+            <h6>Accounts</h6>
+            <button class="btn save-btn">Save changes</button>
+        </div>
+        <form action="">
+            <div class="profile-content">
+
+                <div class="row row-one">
+                    <div class="profile-photo">
+                        <p>Profile photo</p>
+                        <div class="profile-photo-container">
+                            <img src="../../img/blank-profile-photo.png" height="100px" width="100px" alt="">
+
+                            <div class="upload-instruction">
+                                <p class="mb10">Pick a photo from your computer</p>
+                                <label>Add Photo
+                                    <input type="file" name="chosefile" id="">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-field">
+                        <label class="mb5" for="username">Name</label>
+                        <input type="text" name="username" placeholder="Name" required>
+                        <span class="errorMsg" ng-if="wrongUsername">Please enter valid Name</span>
+                    </div>
+                </div>
+
+                <div class="row row-two">
+                    <div class="login-box">
+                        <div class="login-field mb15">
+                            <label class="mb5" for="username">Phone Number</label>
+                            <input type="number" name="username" placeholder="Phone Number" required>
+                            <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                        </div>
+                        <div class="login-field">
+                            <label class="mb5" for="username">Date of Birth</label>
+                            <input type="date" name="username" required>
+                            <span class="errorMsg" ng-if="wrongUsername">Please enter valid Date!</span>
+                        </div>
+                    </div>
+                    <div class="login-box">
+                        <div class="login-field mb15">
+                            <label class="mb5" for="username">Email Address</label>
+                            <input type="email" name="username" placeholder="Email Address" required>
+                            <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                        </div>
+                        <div class="login-field">
+                            <label class="mb5" for="bloodGroup">Blood Group</label>
+                            <select name="bloodGroup">
+                                <option>Select an option</option>
+                                <option>O+</option>
+                                <option>A+</option>
+                                <option>B+</option>
+                                <option>O-</option>
+                                <option>A-</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="login-box">
+                        <div class="login-field mb15">
+                            <label class="mb5" for="gender">Gender</label>
+                            <select name="gender">
+                                <option>Select an option</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="login-field">
+                            <label class="mb5" for="timezone">Timezone</label>
+                            <select name="timezone">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-three">
+                    <div class="login-box-header">
+                        <p>Address</p>
+                    </div>
+                    <div class="login-box-container">
+                        <div class="login-box">
+                            <div class="login-field mb15">
+                                <label class="mb5" for="area">House No./ Street Name/ Area</label>
+                                <input type="number" name="area" placeholder="" required>
+                                <span class="errorMsg" ng-if="wrongUsername">Please enter valid House Number!</span>
+                            </div>
+                            <div class="login-field">
+                                <label class="mb5" for="state">State</label>
+                                <input type="number" name="state" placeholder="" required>
+                                <span class="errorMsg" ng-if="wrongUsername">Please enter valid State Name!</span>
+                            </div>
+                        </div>
+                        <div class="login-box">
+                            <div class="login-field mb15">
+                                <label class="mb5" for="street">Colony / Street / Locality</label>
+                                <input type="number" name="street" placeholder="" required>
+                                <!-- <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span> -->
+                            </div>
+                            <div class="login-field">
+                                <label class="mb5" for="country">Country</label>
+                                <select name="country">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="login-box">
+                            <div class="login-field mb15">
+                                <label class="mb5" for="city">City</label>
+                                <input type="number" name="city" placeholder="" required>
+                                <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                            </div>
+                            <div class="login-field">
+                                <label class="mb5" for="pincode">Pincode</label>
+                                <input type="number" name="pincode" placeholder="Phone Number" required>
+                                <span class="errorMsg" ng-if="wrongUsername">Please enter valid Username or EmailID!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row row-four">
+                    <div class="login-box-header">
+                        <p>Other information</p>
+                    </div>
+                    <div class="login-box-container">
+                        <div class="login-box">
+                            <div class="login-field">
+                                <label class="mb5" for="phoneNum">Extra phone number</label>
+                                <input type="number" name="phoneNum" placeholder="" required>
+                                <span class="errorMsg" ng-if="wrongUsername">Please enter valid House Number!</span>
+                            </div>
+                        </div>
+                        <div class="login-box">
+                            <div class="login-field">
+                                <label class="mb5" for="language">Language</label>
+                                <select name="country">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
