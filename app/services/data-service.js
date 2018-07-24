@@ -1,4 +1,4 @@
-app.factory('Data', ['$http',function ($http) {
+app.factory('Data', ['$http', function ($http) {
 
     var s = {};
     s.baseUrl = "http://localhost:3000/nutritionist_search_api/";
@@ -29,27 +29,19 @@ app.factory('Data', ['$http',function ($http) {
         s.postHttp('masters/retrieve_cities', {}, successCb, failureCb);
     };
 
-    /*s.postHttp = function(url, data, successCb, failurCb){
-        $http.post().then()
-    };
+    s.retriveSpecilities = function (successCb, failureCb) {
+        s.postHttp('masters/retrieve_specialities', {}, successCb, failureCb);
+    }
 
-    s.setValue = function (loc) {
-        locationVal = loc   
-    };
+    s.searchData = function (city_id, speciality_id, q, successCb, failureCb) {
+        var data = { city_id: city_id, speciality_id: speciality_id, q: q };
+        s.postHttp('search/retrieve_nutritionist', data, successCb, failureCb);
+    }
 
-    s.setDetails = function (name) {
-        window.localStorage.location = locationVal == "" ? window.localStorage.location : locationVal
-        window.localStorage.name = name;
-    };
-
-    s.getLocationval = function(searchVal){
-        s.postHttp('', searchVal, successCb, failurCb);
-    };
-
-    s.getNutritionist = function(locationVal, nutritionistValue, specialityValue){
-        var data = {}
-        s.postHttp() 
-    };*/
+    s.retriveNutritionistprofile = function (id, successCb, failureCb) {
+        var data = { id: id }
+        s.postHttp('nutritionist_profile/retrieve_nutritionist_profile', data, successCb, failureCb);
+    }
 
     return s;
 

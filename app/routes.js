@@ -10,6 +10,12 @@ app.config(function($stateProvider, $urlRouterProvider){
             templateUrl: '/pages/nutritionist/view.html',
             controller: 'nutritionistViewCtrl'
         })
+        .state('nutritionist-list', {
+            url: '/nutritionist/list',
+            templateUrl: '/pages/nutritionist/list.html',
+            params: {'city_id': null, 'speciality_id': null, 'q':null},
+            controller: 'nutritionistListCtrl'
+        })
         .state('edit-user-profile', {
             url: '/user/edit/:id',
             templateUrl: 'pages/user/edit.html',

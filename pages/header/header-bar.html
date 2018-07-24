@@ -3,13 +3,13 @@
         <header ng-controller="loginController">
             <div class="header-left">
                 <i class="fa fa-bars" ng-click="openSidepannel=true"></i>
-                <a class="logo">
-                    <img src="img/header-logo.png" height="50px" width="130px" alt="LOGO HERE" ui-sref="home" style="cursor: pointer;">
+                <a class="logo" ui-sref="home">
+                    <img src="img/header-logo.png" height="50px" width="130px" alt="LOGO HERE" style="cursor: pointer;">
                 </a>
             </div>
 
             <div class="search-area" ng-show="state">
-                <div ng-include="'page/header/search-tab.html'"></div>
+                <div ng-include="'pages/header/search-tab.html'"></div>
             </div>
 
             <div class="nav-login">

@@ -1,0 +1,41 @@
+[debug] [2018-07-19T10:41:04.163Z] ----------------------------------------------------------------------
+[debug] [2018-07-19T10:41:04.165Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2018-07-19T10:41:04.165Z] CLI Version:   3.19.0
+[debug] [2018-07-19T10:41:04.165Z] Platform:      linux
+[debug] [2018-07-19T10:41:04.165Z] Node Version:  v8.11.3
+[debug] [2018-07-19T10:41:04.165Z] Time:          Thu Jul 19 2018 16:11:04 GMT+0530 (IST)
+[debug] [2018-07-19T10:41:04.166Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-19T10:41:04.179Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-19T10:41:04.179Z] > authorizing via signed-in user
+[debug] [2018-07-19T10:41:04.181Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-19T10:41:04.182Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/ZllR4Jf70uuCZz7RTt1Lqo7W9b9xIWdvET-0xAIQ1rw',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jul 19 2018 16:11:04 GMT+0530 (IST)
+[debug] [2018-07-19T10:41:04.455Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T10:41:04.482Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nutritionist-search-engine  
+  
+ Thu Jul 19 2018 16:11:04 GMT+0530 (IST)
+[debug] [2018-07-19T10:41:06.105Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T10:41:06.106Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nutritionist-search-engine/tokens  
+  
+ Thu Jul 19 2018 16:11:06 GMT+0530 (IST)
+[debug] [2018-07-19T10:41:07.646Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T10:41:07.647Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/nutritionist-search-engine  
+  
+ Thu Jul 19 2018 16:11:07 GMT+0530 (IST)
+[debug] [2018-07-19T10:41:09.484Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/media/kunj/Data/Data/Fitterfly/ntuitive_search_engine/search_ui'...
+[info] 
+[debug] [2018-07-19T10:41:09.489Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1040152550719/clients/_:getWebAppConfig  
+  
+ Thu Jul 19 2018 16:11:09 GMT+0530 (IST)
+[debug] [2018-07-19T10:41:10.307Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

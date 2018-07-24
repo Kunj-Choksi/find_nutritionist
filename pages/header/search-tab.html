@@ -1,0 +1,35 @@
+<div ng-controller="homeCtrl">
+    <form ng-submit="searchData()" class="search-input-area">
+        <span>
+            <i class="fa fa-search" aria-hidden="true" style="margin-right: 10px;"></i>
+        </span>
+
+        <input type="text" placeholder="Location" ng-click="locationTab = true; suggationTab = false;" ng-model="query.cityName">
+        <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-click="suggationTab = true; locationTab = false"
+            ng-model="query.q">
+        <button type="submit" hidden></button>
+    </form>
+
+    <div class="detect-location-tab" ng-click="getLocation()">
+        <div>
+            <img src="../../img/detect-location-logo.png" width="10px" height="10px" alt="">
+        </div>
+        <span>DETECT</span>
+    </div>
+
+    <div class="suggation-tab" ng-show="suggationTab">
+        <ul>
+            <li ng-repeat="s in speclilities" ng-click="goTodetails(s)">
+                <a href="javascript:void(0)">{{ s.name }}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="location-tab" ng-show="locationTab">
+        <ul>
+            <li ng-repeat="city in cities" ng-click="setCity(city)">
+                <a href="javascript:void(0)"> {{ city.name }} </a>
+            </li>
+        </ul>
+    </div>
+</div>

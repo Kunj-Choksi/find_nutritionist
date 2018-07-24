@@ -1,145 +1,129 @@
-<div>
-    <div ng-include="'pages/header/header-bar.html'"></div>
-</div>
-
-<!-- Container -->
-<div class="container">
-    <!-- con-div -->
-
-    <section class="section-one">
-        <div class="wrap">
-            <!-- wrapper -->
-
-            <div class="slogan">
-                <h2></h2>
-            </div>
-
-            <div>
-                <form ng-submit="searchData()" class="search-input-area">
-                    <span>
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </span>
-
-                    <input type="text" placeholder="Location" ng-click="locationTab = true; suggationTab = false;" ng-model="query.cityName">
-                    <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-model="query.q" ng-click="suggationTab = true; locationTab = false">
-                </form>
-
-                <div class="detect-location-tab" ng-click="getLocation()">
-                    <div>
-                        <img src="../../img/detect-location-logo.png" width="10px" height="10px" alt="">
-                    </div>
-                    <span>DETECT</span>
-                </div>
-
-                <div class="suggation-tab" ng-show="suggationTab">
-                    <ul>
-                        <li ng-repeat="s in speclilities" ui-sref="details" ng-click="setSpeciality(s)">
-                            <a>{{ s.name }}</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="location-tab" ng-show="locationTab">
-                    <ul>
-                        <li ng-repeat="city in cities" ng-click="setCity(city)">
-                            <a href=""> {{ city.name }} </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="popular-search-list">
-                <div class="visible-list">
-                    <ul>
-                        <li>Popular Search: </li>
-                        <li ng-repeat="p in populerlist" ui-sref="details" ng-click="setDetails(p)">
-                            <a>{{p}}</a>
-                        </li>
-                        <li>
-                            <a href="" class="list-dropdown" ng-click="openOtherlisttab()">
-                                other
-                                <i class="fa fa-chevron-up arrow-up is-hidden" aria-hidden="true" style="font-size: 10px"></i>
-                                <i class="fa fa-chevron-down arrow-down" aria-hidden="true" style="font-size: 10px"></i>
-
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="other-list-tab" ng-show="showOtherlisttab">
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">General Physicians and Specialists</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">Dentists</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">Alternative Medicine Practitioners</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">Therapists & Nutritionists</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-tab">
-                <a href="">
-                    <i class="fa fa-comments-o" aria-hidden="true"></i>
-                    <p>Chat with Doctors</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                    <p>Order Medicins</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                    <p>View Medical Records</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-flask" aria-hidden="true"></i>
-                    <p>Book Test</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                    <p>Read Articles</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-briefcase" aria-hidden="true"></i>
-                    <p>For health Providers</p>
-                </a>
-            </div>
-
+<div ng-controller="homeCtrl">
+    <div class="container">
+        <!-- con-div -->
+        <div>
+            <div ng-include="'pages/header/header-bar.html'"></div>
         </div>
-    </section>
 
-    <!-- wrapper -->
+        <section class="section-one">
+            <div class="wrap">
+                <!-- wrapper -->
+
+                <div class="slogan">
+                    <h2></h2>
+                </div>
+                <div class="search-area">
+                    <div ng-include="'pages/header/search-tab.html'"></div>
+                </div>
+                <div class="popular-search-list">
+                    <div class="visible-list">
+                        <ul>
+                            <li>Popular Search: </li>
+                            <li ng-repeat="p in populerlist" ui-sref="details" ng-click="setDetails(p)">
+                                <a>{{p}}</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-dropdown" ng-click="openOtherlisttab()">
+                                    other
+                                    <i class="fa fa-chevron-up arrow-up is-hidden" aria-hidden="true" style="font-size: 10px"></i>
+                                    <i class="fa fa-chevron-down arrow-down" aria-hidden="true" style="font-size: 10px"></i>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="other-list-tab" ng-show="showOtherlisttab">
+                        <div class="one-fourth">
+                            <ul>
+                                <li class="list-head">General Physicians and Specialists</li>
+                                <li class="list-item">
+                                    <a href="" class="list-item-link"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="one-fourth">
+                            <ul>
+                                <li class="list-head">Dentists</li>
+                                <li class="list-item">
+                                    <a href="" class="list-item-link"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="one-fourth">
+                            <ul>
+                                <li class="list-head">Alternative Medicine Practitioners</li>
+                                <li class="list-item">
+                                    <a href="" class="list-item-link"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="one-fourth">
+                            <ul>
+                                <li class="list-head">Therapists & Nutritionists</li>
+                                <li class="list-item">
+                                    <a href="" class="list-item-link"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-tab">
+                    <a href="">
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                        <p>Chat with Doctors</p>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        <p>Order Medicins</p>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>View Medical Records</p>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-flask" aria-hidden="true"></i>
+                        <p>Book Test</p>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                        <p>Read Articles</p>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        <p>For health Providers</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- wrapper -->
+    </div>
 </div>
+<!-- Container -->
 <!-- con-div -->
 
 <!-- Footer -->
 <footer>
     <div class="footer-logo">
         <img src="" alt="">
+    </div>
+    <div class="suggation-tab" ng-show="suggationTab">
+        <ul>
+            <li ng-repeat="s in suggetion" ui-sref="details" ng-click="setDetails(s.name)">
+                <a>{{ s.name }}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="location-tab" ng-show="locationTab">
+        <ul>
+            <li ng-repeat="loc in location" ng-click="setValue(loc)">
+                <a href=""> {{loc}} </a>
+            </li>
+        </ul>
     </div>
 </footer>
 

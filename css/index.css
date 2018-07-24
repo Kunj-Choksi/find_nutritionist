@@ -178,16 +178,16 @@ header .search-input-area :nth-child(3){
     width: 350px;
 }
 header .search-input-area span i{
-    position: absolute;
-    top: 25px;
-    left: 672px;
+    position: relative;
+    top: 0px;
+    left: 275px;
     color: #cccccc;
     font-size: 16px;
 }
 header .suggation-tab{
     position: absolute;
     top: 55px;
-    left: 662px; 
+    left: 669px; 
     width: 382px;
     background-color: #dddcdc;
     border-radius: 3px;
@@ -213,7 +213,7 @@ header .suggation-tab ul li a{
 header .location-tab{
     position: absolute;
     top: 55px;
-    left: 425px;
+    left: 433px;
     width: 233px;
     background-color: #dddcdc;
     border-radius: 3px;
@@ -236,12 +236,14 @@ header .location-tab ul li:last-child{
     border-bottom: 0px;
 }
 header .detect-location-tab{
-    position: absolute;
-    top: 20px;
-    left: 590px;
+    position: relative;
+    top: -35px;
+    left: 283px;
     background-color: #cecccc;
     border-radius: 3px;
-    padding: 3px 5px 2px;}
+    padding: 3px 5px 2px;
+    width: 51px;
+}
 .detect-location-tab img{
     margin-right: 5px;
 }
@@ -275,20 +277,21 @@ header .detect-location-tab:hover{
     width: 320px;
 }
 .search-input-area span i{
-    position: absolute;
-    top: 237px;
-    left: 606px;
+    position: relative;
+    top: 1px;
+    left: 275px;
     color: #cccccc;
     font-size: 16px;
 }
 .suggation-tab{
-    position: absolute;
-    top: 268px;
-    left: 598px; 
-    width: 351px;
+    position: relative;
+    top: -22px;
+    left: 392px; 
+    width: 352px;
     background-color: #dddcdc;
     border-radius: 3px;
     box-sizing: border-box;
+    z-index: 1;
 }
 .suggation-tab ul li{
     border-bottom: 1px dotted #333333;
@@ -307,13 +310,14 @@ header .detect-location-tab:hover{
 }
 
 .location-tab{
-    position: absolute;
-    top: 268px;
-    left: 361px; 
-    width: 232px;
+    position: relative;
+    top: -22px;
+    left: 155px; 
+    width: 233px;
     background-color: #dddcdc;
     border-radius: 3px;
-    box-sizing: border-box;   
+    box-sizing: border-box;
+    z-index: 1;
 }
 .location-tab ul li{
     border-bottom: 1px dotted #333333;
@@ -332,12 +336,13 @@ header .detect-location-tab:hover{
 }
 .detect-location-tab{
     display: flex;
-    position: absolute;
-    top: 233px;
-    left: 524px;
+    position: relative;
+    top: -35px;
+    left: 320px;
     background-color: #cecccc;
     border-radius: 3px;
     padding: 3px 5px 2px;
+    width: 51px;
 }
 .detect-location-tab img{
     margin-right: 5px;
@@ -584,13 +589,125 @@ header .detect-location-tab:hover{
     color: #042b9f;
 }
 
-/* show-search-details */
-.search-tag h3{
-    position: absolute;
-    top: 100px;
-    left: 200px;
+/*  nutritionist-list */
+.nutritionist-list-section .wrap{
+    width: 1200px;
+    margin: 0 auto; 
+}
+.nutritionist-section .nutritionist-profile{
+    width: 900px;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 2px 1px hsla(0,0%,43%,.14);
+    box-sizing: border-box;
+    padding: 10px;
+    color: #414146;
+}
+.nutritionist-profile-top{
+    display: flex;
+}
+.nutritionist-profile-top .nutritionist-logo{
+    flex: 0.5;
+    padding: 5px;
+}
+.nutritionist-profile-top .nutritionist-container{
+    padding: 10px;
+    flex: 3;
+}
+.nutritionist-profile-top .nutritionist-info{
+    flex: 1.5;
+    padding: 5px;
+}
+.nutritionist-container .nutritionist-head{
+    font: 700 18px/18px sans-serif;
+    color: #14bef0;
+    cursor: pointer;
+}
+.nutritionist-container .nutritionist-head:hover{
+    text-decoration: underline;
+}
+.nutritionist-container .experience{
+    font: 400 14px/14px sans-serif;
 }
 
+.nutritionist-info i{
+    font-size: 15px;
+    font-weight: 400;
+    color: #69696c;
+    margin-right: 5px;
+}
+.nutritionist-info table tbody tr td{
+    padding: 0px 5px 15px; 
+    font: 400 13px/15px sans-serif;
+}
+.nutritionist-info .contact-tab .btn{
+    padding: 10px 75px;
+}
+.nutritionist-info .contact-tab .btn i{
+    color: #fff;
+}
+.nutritionist-profile-bottom{
+    padding: 20px;
+}
+.nutritionist-profile-bottom .contact-number{
+    color: #00a500;
+    font: 500 18px/20px Roboto;
+}
+.nutritionist-profile-bottom .note-tab p{
+    font: 400 12px/16px sans-serif;
+}
+.note-tab p a{
+    color: #14BEF0;
+    cursor: pointer;
+}
+/*  nutritionist-list end*/
+
+/* nutritionist-details-profile */
+.nutritionist-detail-section{
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.nutritionist-detail-section .wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.nutritionist-profile .section-one{
+    width: 950px;
+    height: 300px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 2px 1px hsla(0,0%,43%,.14);
+    box-sizing: border-box;
+    padding: 10px;
+    color: #414146;
+}
+.nutritionist-profile .section{
+}
+.nutritionist-container .about{
+    font: 400 14px/18px sans-serif;
+    color: #414146;
+}
+.section-one{
+    display: flex;
+}
+.section-one .nutritionist-logo{
+    flex: 1;
+}
+.section-one .nutritionist-container{
+    flex: 6;
+}
+.section-two nav ul{
+    display: flex;
+}
+.section-two nav ul li{
+    padding: 20px;
+    cursor: pointer;
+}
+.sub-section-two{
+    width: 950px;
+    background-color: #fff;
+    padding: 10px;
+}
+/* nutritionist-details-profile End*/
 
 /* User Dashboard Profile */
 .row{

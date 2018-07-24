@@ -1,0 +1,154 @@
+<div>
+    <div ng-include="'pages/header/header-bar.html'"></div>
+</div>
+
+<div class="nutritionist-list-section">
+    <div class="wrap">
+        <div ng-controller="nutritionistListCtrl">
+            <section class="clinic-section">
+                <!-- <div class="clinic-profile">
+                        <div class="clinic-profile-top">
+                            <div class="clinic-logo">
+                                <img src="" alt="">
+                            </div>
+                            <div class="clinic-container">
+                                <a href="" class="clinic-head"></a>
+                                <span class="details"></span>
+                                <div class="clinic-photos">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="clinic-services">
+                                    <ul>
+                                        <li>
+                                            <a href=""></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clinic-info">
+                                <ul>
+                                    <li class="clinic-rating">
+                
+                                    </li>
+                                    <li class="clinic-feedback-info">
+                                        <a href=""></a>
+                                    </li>
+                                    <li class="clinic-location">
+                                        <a href=""></a>
+                                    </li>
+                                    <li class="clinic-fair">
+                
+                                    </li>
+                                    <li class="clinic-availability">
+                
+                                    </li>
+                                    <li class="clinic-contact-info">
+                                        <span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clinic-profile-bottom">
+                            <div class="contact-number">
+                                <span></span>
+                            </div>
+                            <div class="note-tab">
+                
+                            </div>
+                        </div>
+                    </div> -->
+            </section>
+
+            <section class="nutritionist-section">
+                <div ng-repeat="n in nutritionist">
+                    <div class="nutritionist-profile mb20">
+                        <div class="nutritionist-profile-top mb20">
+                            <div class="nutritionist-logo">
+                                <img ng-src="{{ n.avatar }}" alt="">
+                            </div>
+                            <div class="nutritionist-container">
+                                <p class="nutritionist-head mb5" ng-click="goToprofile(n)"> {{ n.name }} </p>
+                                <p class="degree"></p>
+                                <p class="experience"> {{ n.experience }} Years experience</p>
+                                <div class="nutritionist-services">
+                                    <ul>
+                                        <li ng-repeat="s in n.specialities">
+                                            <a href=""> {{ s.name }} </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nutritionist-clinic-photos">
+
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <div class="nutritionist-info">
+                                <table>
+                                    <tbody>
+                                        <tr class="nutritionist-rating">
+                                            <td>
+                                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="nutritionist-feedback-info">
+                                            <td>
+                                                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                                            </td>
+                                            <td>
+                                                <a href=""></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="nutritionist-location">
+                                            <td>
+                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            </td>
+                                            <td> {{ n.city.name }}</td>
+                                        </tr>
+                                        <tr class="nutritionist-fair">
+                                            <td>
+                                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            </td>
+                                            <td>{{ n.counsultation_fees | currency:"₹ "}}</td>
+                                        </tr>
+                                        <tr class="nutritionist-availability">
+                                            <td>
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="contact-tab">
+                                    <button class="btn" ng-click="contactInfo=true">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        <span>Call Now</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nutritionist-profile-bottom" ng-show="contactInfo">
+                            <div class="contact-number mb10">
+                                <span>Ph: {{ n.mobile_no }} (Extension: )</span>
+                            </div>
+                            <div class="note-tab">
+                                <p>Note: Dial the phone number first. The audio will guide you to enter the extension. This
+                                    call may be recorded for quality control purpose and call recording may be shared with
+                                    the center you are trying to connect
+                                </p>
+                                <p>By calling this number, you agree to the
+                                    <a>Terms & Conditions</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+
+
