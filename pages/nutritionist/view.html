@@ -1,64 +1,55 @@
-<div ng-include="'page/header/header-bar.html'"></div>
-
-<div class="filter-tab">
-
+<div>
+    <div ng-include="'pages/header/header-bar.html'"></div>
 </div>
 
-<div class="search-tag" ng-controller="homeController">
-    {{ getValues() }}
-    <h3>Results of {{searchValue}} in {{searchedLoc}} </h3>
-</div>
+<div ng-controller="nutritionistViewCtrl">
+    <section class="nutritionist-detail-section">
+        <div class="wrap">
+            <div class="nutritionist-profile mb20">
+                <div class="section section-one mb20">
+                    <div class="nutritionist-logo">
+                        <img ng-src="{{ nutritionist.avatar }}" alt="">
+                    </div>
+                    <div class="nutritionist-container">
+                        <p class="nutritionist-head mb5" ng-click="goToprofile(n)"> {{ nutritionist.name }} </p>
+                        <p class="degree"></p>
 
-<div class="clinic-profile">
-    <div class="clinic-profile-top">
-        <div class="clinic-logo">
-            <img src="" alt="">
-        </div>
-        <div class="clinic-container">
-            <a href="" class="clinic-head"></a>
-            <span class="details"></span>
-            <div class="clinic-photos">
-                <img src="" alt="">
+                        <p class="experience mb10">{{ getSpecialities() }} {{ nutritionist.experience }} Years experience</p>
+                        <p class="rating"></p>
+                        <p class="about"> {{ nutritionist.about }} </p>
+                    </div>
+                </div>
+                <div class="section section-two" ng-init="infoTab = true">
+                    <nav>
+                        <ul>
+                            <li ng-click="infoTab=true; feedbackTab=false; consultTab=false; healthfeedTab=false">
+                                <a>Info</a>
+                            </li>
+                            <li ng-click="infoTab=false; feedbackTab=true; consultTab=false; healthfeedTab=false">
+                                <a>Feedback</a>
+                            </li>
+                            <li ng-click="infoTab=false; feedbackTab=false; consultTab=true; healthfeedTab=false">
+                                <a>Consult Q&A</a>
+                            </li>
+                            <li ng-click="infoTab=false; feedbackTab=false; consultTab=false; healthfeedTab=true">
+                                <a>Healthfeed</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="sub-section-two" ng-show="infoTab" ng-class="'white'">
+                        info
+                    </div>
+                    <div class="sub-section-two" ng-show="feedbackTab">
+                        Feedback
+                    </div>
+                    <div class="sub-section-two" ng-show="consultTab">
+                        Consult
+                    </div>
+                    <div class="sub-section-two" ng-show="healthfeedTab">
+                        Healthfeed
+                    </div>
+                </div>
             </div>
-            <div class="clinic-services">
-                <ul>
-                    <li>
-                        <a href=""></a>
-                    </li>
-                </ul>
-            </div>
         </div>
-        <div class="clinic-info">
-            <ul>
-                <li class="clinic-rating">
-
-                </li>
-                <li class="clinic-feedback-info">
-                    <a href=""></a>
-                </li>
-                <li class="clinic-location">
-                    <a href=""></a>
-                </li>
-                <li class="clinic-fair">
-
-                </li>
-                <li class="clinic-availability">
-
-                </li>
-                <li class="clinic-contact-info">
-                    <span></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="clinic-profile-bottom">
-        <div class="contact-number">
-            <span></span> 
-        </div>
-        <div class="note-tab">
-            
-        </div>
-    </div>
-
-
+    </section>
 </div>
