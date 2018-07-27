@@ -594,6 +594,10 @@ header .detect-location-tab:hover{
     width: 1200px;
     margin: 0 auto; 
 }
+.nutritionist-list-section .search-result p{
+    font: 400 12px/18px sans-serif;
+    color: #787887;
+}
 .nutritionist-section .nutritionist-profile{
     width: 900px;
     border: 1px solid #fff;

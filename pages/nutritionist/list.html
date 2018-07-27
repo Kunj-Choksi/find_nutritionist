@@ -5,6 +5,10 @@
 <div class="nutritionist-list-section">
     <div class="wrap">
         <div ng-controller="nutritionistListCtrl">
+            <section class="search-result mb10">
+                <p>Search results: Total {{ length }} Nutritionist in {{ cityName }} </p>
+            </section>
+
             <section class="clinic-section">
                 <!-- <div class="clinic-profile">
                         <div class="clinic-profile-top">
@@ -146,6 +150,10 @@
                 </div>
             </section>
 
+            <section ng-show="noDatafound">
+                <p>No data available for {{ query.q }} </p>
+                <p></p>
+            </section>
         </div>
     </div>
 </div>

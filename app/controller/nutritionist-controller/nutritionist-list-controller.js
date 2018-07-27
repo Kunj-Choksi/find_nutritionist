@@ -5,6 +5,7 @@ app.controller('nutritionistListCtrl', ['$scope', '$stateParams', 'Data', '$stat
     $scope.query.specialityId = '';
     $scope.query.q = '';
     $scope.nutritionist = [];
+    $scope.noDatafound = false;
 
 
     $scope.query.citi_id = window.localStorage.citi_id;
@@ -16,8 +17,14 @@ app.controller('nutritionistListCtrl', ['$scope', '$stateParams', 'Data', '$stat
     }
 
     $scope.init = function () {
-        Data.searchData($scope.query.citi_id, $scope.query.speciality_id, (($scope.query.speciality_id) ? '' : $scope.query.q), function (result) {
-            $scope.nutritionist = result.contents.nutritionists;
+        Data.searchData($scope.query.citi_id, $scope.query.speciality_id, $scope.query.q, function (result) {
+            if (result.contents.nutritionists.length == 0) {
+                $scope.noDatafound = true;
+            }else{
+                $scope.length = result.contents.nutritionists.length;
+                $scope.cityName = result.contents.nutritionists[0].city.name;
+                $scope.nutritionist = result.contents.nutritionists;
+            }
         }, function (error) {
             alert(error);
         });

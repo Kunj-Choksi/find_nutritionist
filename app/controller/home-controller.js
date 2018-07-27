@@ -34,9 +34,8 @@ app.controller('homeCtrl', ['$scope', '$http', 'Data', '$state', function ($scop
     
     $scope.goTodetails = function (s) {
         window.localStorage.citi_id = $scope.query.cityId;
-        window.localStorage.speciality_id = s.id;
-        window.localStorage.q = s.name;
-
+        window.localStorage.speciality_id = (s.id) ? s.id : "";
+        window.localStorage.q = $scope.query.q;
         if ($state.current.name == "nutritionist-list"){
             Data.searchData(window.localStorage.citi_id, window.localStorage.speciality_id, window.localStorage.q, function(result){
                 $scope.nutritionist = result.contents;
