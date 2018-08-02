@@ -5,6 +5,9 @@
 <div ng-controller="nutritionistViewCtrl">
     <section class="nutritionist-detail-section">
         <div class="wrap">
+
+            <div class="loader" ng-if="!loaded"></div>
+
             <div class="nutritionist-profile mb20">
                 <div class="section section-one mb20">
                     <div class="nutritionist-logo">
@@ -12,40 +15,41 @@
                     </div>
                     <div class="nutritionist-container">
                         <p class="nutritionist-head mb5" ng-click="goToprofile(n)"> {{ nutritionist.name }} </p>
-                        <p class="degree"></p>
+                        <p class="degree mb10"> {{ nutritionist.degree }} </p>
 
                         <p class="experience mb10">{{ getSpecialities() }} {{ nutritionist.experience }} Years experience</p>
                         <p class="rating"></p>
                         <p class="about"> {{ nutritionist.about }} </p>
                     </div>
                 </div>
+
                 <div class="section section-two" ng-init="infoTab = true">
                     <nav>
                         <ul>
-                            <li ng-click="infoTab=true; feedbackTab=false; consultTab=false; healthfeedTab=false">
+                            <li ng-click="infoTab=true; feedbackTab=false; consultTab=false; healthfeedTab=false" ng-class="{'active': infoTab == true}">
                                 <a>Info</a>
                             </li>
-                            <li ng-click="infoTab=false; feedbackTab=true; consultTab=false; healthfeedTab=false">
+                            <li ng-click="infoTab=false; feedbackTab=true; consultTab=false; healthfeedTab=false" ng-class="{'active': feedbackTab == true}">
                                 <a>Feedback</a>
                             </li>
-                            <li ng-click="infoTab=false; feedbackTab=false; consultTab=true; healthfeedTab=false">
+                            <li ng-click="infoTab=false; feedbackTab=false; consultTab=true; healthfeedTab=false" ng-class="{'active': consultTab == true}">
                                 <a>Consult Q&A</a>
                             </li>
-                            <li ng-click="infoTab=false; feedbackTab=false; consultTab=false; healthfeedTab=true">
+                            <li ng-click="infoTab=false; feedbackTab=false; consultTab=false; healthfeedTab=true" ng-class="{'active': healthfeedTab == true}">
                                 <a>Healthfeed</a>
                             </li>
                         </ul>
                     </nav>
-                    <div class="sub-section-two" ng-show="infoTab" ng-class="'white'">
-                        info
+                    <div class="sub-section-two info" ng-show="infoTab">
+                        <h6>{{ nutritionist.city.name }}</h6>
                     </div>
-                    <div class="sub-section-two" ng-show="feedbackTab">
+                    <div class="sub-section-two feedback" ng-show="feedbackTab">
                         Feedback
                     </div>
-                    <div class="sub-section-two" ng-show="consultTab">
+                    <div class="sub-section-two consult" ng-show="consultTab">
                         Consult
                     </div>
-                    <div class="sub-section-two" ng-show="healthfeedTab">
+                    <div class="sub-section-two healthfeed" ng-show="healthfeedTab">
                         Healthfeed
                     </div>
                 </div>

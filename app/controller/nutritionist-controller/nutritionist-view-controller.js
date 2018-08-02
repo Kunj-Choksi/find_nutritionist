@@ -1,5 +1,7 @@
 app.controller('nutritionistViewCtrl', ['$scope', 'Data', '$stateParams', '$state', function ($scope, Data, $stateParams, $state) {
 
+    $scope.loaded = false;
+
     $scope.nutritionist_id = $stateParams.id
     if ($scope.nutritionist_id == '') {
         $state.go('nutritionist-list')
@@ -8,6 +10,7 @@ app.controller('nutritionistViewCtrl', ['$scope', 'Data', '$stateParams', '$stat
     $scope.intit = function () {
         Data.retriveNutritionistprofile($scope.nutritionist_id, function (result) {
             $scope.nutritionist = result.contents;
+            $scope.loaded = true;
             console.log($scope.nutritionist)
         }, function (error) {
             alert(error)

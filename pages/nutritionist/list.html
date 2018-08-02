@@ -2,14 +2,16 @@
     <div ng-include="'pages/header/header-bar.html'"></div>
 </div>
 
-<div class="nutritionist-list-section">
+<section class="nutritionist-list-section">
     <div class="wrap">
         <div ng-controller="nutritionistListCtrl">
-            <section class="search-result mb10">
+            <div class="search-result mb10">
                 <p>Search results: Total {{ length }} Nutritionist in {{ cityName }} </p>
-            </section>
+            </div>
 
-            <section class="clinic-section">
+            <div class="loader" ng-if="!loaded"></div>
+
+            <div class="clinic-section">
                 <!-- <div class="clinic-profile">
                         <div class="clinic-profile-top">
                             <div class="clinic-logo">
@@ -61,9 +63,9 @@
                             </div>
                         </div>
                     </div> -->
-            </section>
+            </div>
 
-            <section class="nutritionist-section">
+            <div class="nutritionist-section">
                 <div ng-repeat="n in nutritionist">
                     <div class="nutritionist-profile mb20">
                         <div class="nutritionist-profile-top mb20">
@@ -72,7 +74,6 @@
                             </div>
                             <div class="nutritionist-container">
                                 <p class="nutritionist-head mb5" ng-click="goToprofile(n)"> {{ n.name }} </p>
-                                <p class="degree"></p>
                                 <p class="experience"> {{ n.experience }} Years experience</p>
                                 <div class="nutritionist-services">
                                     <ul>
@@ -148,15 +149,12 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section ng-show="noDatafound">
-                <p>No data available for {{ query.q }} </p>
+            <div ng-show="noDatafound">
+                <p>No data available for {{ query.q }} {{  }}</p>
                 <p></p>
-            </section>
+            </div>
         </div>
     </div>
-</div>
-
-
-
+</section>

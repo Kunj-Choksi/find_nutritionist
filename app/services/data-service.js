@@ -1,7 +1,8 @@
 app.factory('Data', ['$http', function ($http) {
 
     var s = {};
-    s.baseUrl = "http://localhost:3000/nutritionist_search_api/";
+    s.baseUrl = "https://www.fitterfly.in/nutritionist_search_api/";
+    //s.baseUrl = "http://localhost:3000/nutritionist_search_api/";
 
     s.postHttp = function (url, params, successCb, failureCb) {
         s.getAuthData(params);

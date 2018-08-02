@@ -1,16 +1,19 @@
-<div ng-controller="homeCtrl">
-    <div class="container">
-        <!-- con-div -->
-        <div>
-            <div ng-include="'pages/header/header-bar.html'"></div>
-        </div>
+<div ng-controller="homeCtrl" ng-click="closeOpenedtabs()">
+    <!-- con-div -->
+    <div>
+        <div ng-include="'pages/header/header-bar.html'"></div>
+    </div>
 
-        <section class="section-one">
+    <div class="container">
+        <section class="search-box">
             <div class="wrap">
                 <!-- wrapper -->
 
-                <div class="slogan">
-                    <h2></h2>
+                <div class="intro">
+                    <h1>Your home for health</h1>
+                </div>
+                <div class="search-title mb10">
+                    <h5>Find and Book</h5>
                 </div>
                 <div class="search-area">
                     <div ng-include="'pages/header/search-tab.html'"></div>
@@ -25,9 +28,7 @@
                             <li>
                                 <a href="" class="list-dropdown" ng-click="openOtherlisttab()">
                                     other
-                                    <i class="fa fa-chevron-up arrow-up is-hidden" aria-hidden="true" style="font-size: 10px"></i>
-                                    <i class="fa fa-chevron-down arrow-down" aria-hidden="true" style="font-size: 10px"></i>
-
+                                    <i class="fa fa-chevron-down arrow-down" ng-class="{'rotate-me': showOtherlisttab == true}" aria-hidden="true" style="font-size: 10px"></i>
                                 </a>
                             </li>
                         </ul>
@@ -101,29 +102,14 @@
 
         <!-- wrapper -->
     </div>
+    <!-- Container -->
 </div>
-<!-- Container -->
 <!-- con-div -->
 
 <!-- Footer -->
 <footer>
     <div class="footer-logo">
         <img src="" alt="">
-    </div>
-    <div class="suggation-tab" ng-show="suggationTab">
-        <ul>
-            <li ng-repeat="s in suggetion" ui-sref="details" ng-click="setDetails(s.name)">
-                <a>{{ s.name }}</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="location-tab" ng-show="locationTab">
-        <ul>
-            <li ng-repeat="loc in location" ng-click="setValue(loc)">
-                <a href=""> {{loc}} </a>
-            </li>
-        </ul>
     </div>
 </footer>
 
@@ -133,5 +119,9 @@
         $('.list-dropdown').click(function () {
             $(this).find(".arrow-up, .arrow-down").toggle();
         })
+        
     });
+    $(document).click(function(){
+        $('.other-list-tab').hide();
+    })
 </script>
