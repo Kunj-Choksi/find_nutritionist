@@ -8,7 +8,6 @@ app.controller('nutritionistListCtrl', ['$scope', '$stateParams', 'Data', '$stat
     $scope.noDatafound = false;
     $scope.loaded = false;
 
-
     $scope.query.citi_id = window.localStorage.citi_id;
     $scope.query.speciality_id = window.localStorage.speciality_id;
     $scope.query.q = window.localStorage.q;
@@ -18,13 +17,17 @@ app.controller('nutritionistListCtrl', ['$scope', '$stateParams', 'Data', '$stat
     }
 
     $scope.init = function () {
+        $scope.searchData();
+    };
+
+    $scope.searchData = function(){
         Data.searchData($scope.query.citi_id, $scope.query.speciality_id, $scope.query.q, function (result) {
             if (result.contents.nutritionists.length == 0) {
                 $scope.noDatafound = true;
                 $scope.loaded = true;
             }else{
                 $scope.length = result.contents.nutritionists.length;
-                $scope.cityName = result.contents.nutritionists[0].city.name;
+                $scope.cityName = (window.localStorage.citi_id) ? result.contents.nutritionists[0].city.name : 'Near By';
                 $scope.nutritionist = result.contents.nutritionists;
                 $scope.loaded = true;
             }

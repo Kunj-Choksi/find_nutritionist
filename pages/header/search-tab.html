@@ -1,7 +1,7 @@
-<div ng-controller="homeCtrl">
+<div ng-controller="searchCtrl">
     <form ng-submit="goTodetails(query.q)">
         <div class="search-location">
-            <input type="text" placeholder="Location" ng-click="locationTab = true; suggationTab = false;" ng-model="query.cityName">
+            <input type="text" placeholder="Location" ng-click="toggleLocationmenu($event)" ng-model="query.cityName">
             <div class="detect-location-tab" ng-click="getLocation()">
                 <div>
                     <img src="../../img/detect-location-logo.png" width="10px" height="10px" alt="">
@@ -21,8 +21,7 @@
             <span>
                 <i class="fa fa-search" aria-hidden="true" style="margin-right: 10px;"></i>
             </span>
-            <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-click="suggationTab = true; locationTab = false; showOtherlisttab = false"
-                ng-model="query.q">
+            <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-click="toggleSuggationmenu($event)" ng-model="query.q">
             <div class="suggation-tab" ng-show="suggationTab">
                 <ul>
                     <li ng-repeat="s in speclilities | filter: query.q" ng-click="goTodetails(s)">

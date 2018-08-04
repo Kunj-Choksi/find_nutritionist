@@ -1,6 +1,6 @@
-app.controller('loginController', ['$scope', '$http', 'Data', '$state', function ($scope, $http, Data, $state) {
+app.controller('headerCtrl', ['$scope', '$http', 'Data', '$state', function ($scope, $http, Data, $state) {
 
-    $scope.state = $state.current.name == "home" ? false : true;
+    $scope.showSearchbar = $state.current.name == "home" ? false : true;
 
     $scope.init = function () {
         $scope.loginBox = true;

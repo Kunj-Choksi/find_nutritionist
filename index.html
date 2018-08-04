@@ -18,8 +18,10 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/routes.js"></script>
 
+    <script type="text/javascript" src="app/controller/main-controller/main-controller.js"></script>
     <script type="text/javascript" src="app/controller/home-controller.js"></script>
-    <script type="text/javascript" src="app/controller/login-controller/login-controller.js"></script>
+    <script type="text/javascript" src="app/controller/header-controller/header-controller.js"></script>
+    <script type="text/javascript" src="app/controller/search-controller/search-controller.js"></script>
     <script type="text/javascript" src="app/controller/nutritionist-controller/nutritionist-list-controller.js"></script>
     <script type="text/javascript" src="app/controller/nutritionist-controller/nutritionist-view-controller.js"></script>
     <script type="text/javascript" src="app/controller/user-profile/user-view-edit-profile.js"></script>
@@ -27,7 +29,7 @@
 </head>
 
 <body ng-app="app">
-    <div class="container">
+    <div class="container" ng-controller="mainCtrl">
         <ui-view></ui-view>
     </div>
 </body>

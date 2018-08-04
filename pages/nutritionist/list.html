@@ -5,7 +5,7 @@
 <section class="nutritionist-list-section">
     <div class="wrap">
         <div ng-controller="nutritionistListCtrl">
-            <div class="search-result mb10">
+            <div class="search-result mb10" ng-show="!(noDatafound)">
                 <p>Search results: Total {{ length }} Nutritionist in {{ cityName }} </p>
             </div>
 
