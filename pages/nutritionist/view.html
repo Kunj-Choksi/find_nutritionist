@@ -11,7 +11,7 @@
             <div class="nutritionist-profile mb20">
                 <div class="section section-one mb20">
                     <div class="nutritionist-logo">
-                        <img ng-src="{{ nutritionist.avatar }}" alt="">
+                        <img ng-src="img/blank-profile-photo.png" height="140px" width="140px" alt="">
                     </div>
                     <div class="nutritionist-container">
                         <p class="nutritionist-head mb5" ng-click="goToprofile(n)"> {{ nutritionist.name }} </p>
@@ -41,16 +41,65 @@
                         </ul>
                     </nav>
                     <div class="sub-section-two info" ng-show="infoTab">
-                        <h6>{{ nutritionist.city.name }}</h6>
+                        <div class="sub-section-two-top mb20">
+                            <div class="one-third">
+                                <h6 class="mb15"> {{ nutritionist.city.name }}</h6>
+                                <div class="clinic-info">
+                                    <a class="clinic-name mb20">Dental Speciality Care</a>
+                                    <p class="clinic-address mb10">
+                                        2, Jolitha Complex, N.B. Patil Marg, Ghatla Village Road, Landmark: Near Maitri Park, Mumbai
+                                    </p>
+                                    <a class="clinic-name">Get Direction</a>
+                                    <div class="clinic-photo-group">
+                                        <img src="img/clinic/one.jpeg" height="40px" width="40px">
+                                        <img src="img/clinic/two.jpeg" height="40px" width="40px">
+                                        <img src="img/clinic/three.jpeg" height="40px" width="40px">
+                                        <img src="img/clinic/four.jpeg" height="40px" width="40px">
+                                        <img src="img/clinic/fifth.jpeg" height="40px" width="40px">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="one-third">
+                                <p class="aviliblity-day mb5">Mon-Sat</p>
+                                <p class="aviliblity-time">9:30AM - 1:00PM</p>
+                                <p class="aviliblity-time">4:30PM - 8:30PM</p>
+                            </div>
+                            <div class="one-third">
+                                <p style="font: 400 14px/18px sans-serif;color: #333333">{{ nutritionist.counsultation_fees | currency:"₹ "}} &nbsp;
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                </p>
+
+                                <div class="contact-tab">
+                                    <button class="btn" ng-click="contactInfo = (contactInfo) ? false : true">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        <span>Call Now</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-section-two-bottom" ng-show="contactInfo">
+                            <div class="contact-number mb10">
+                                <span>Ph: {{ nutritionist.mobile_no }} (Extension: )</span>
+                            </div>
+                            <div class="note-tab">
+                                <p>Note: Dial the phone number first. The audio will guide you to enter the extension. This
+                                    call may be recorded for quality control purpose and call recording may be shared with
+                                    the center you are trying to connect
+                                </p>
+                                <p>By calling this number, you agree to the
+                                    <a>Terms & Conditions</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="sub-section-two feedback" ng-show="feedbackTab">
-                        Feedback
+                        <p>No Feedback Yet!</p>
                     </div>
                     <div class="sub-section-two consult" ng-show="consultTab">
-                        Consult
+                        <p>No Consult Yet!</p>
                     </div>
                     <div class="sub-section-two healthfeed" ng-show="healthfeedTab">
-                        Healthfeed
+                        <p>No Healthfeed Yet!</p>
                     </div>
                 </div>
             </div>

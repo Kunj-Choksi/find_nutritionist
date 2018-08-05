@@ -9,18 +9,12 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
     };
 
     $scope.goTodetails = function (s) {
-        window.localStorage.citi_id = $scope.query.cityId;
+        window.localStorage.citi_id = ($scope.query.cityId) ? $scope.query.cityId : window.localStorage.citi_id;
         window.localStorage.speciality_id = (s.id) ? s.id : "";
         window.localStorage.q = window.localStorage.speciality_id != "" ? "" : $scope.query.q;
-        if ($state.current.name == "nutritionist-list") {
-            Data.searchData(window.localStorage.citi_id, window.localStorage.speciality_id, window.localStorage.q, function (result) {
-                $scope.nutritionist = result.contents;
-                $scope.loaded = true;
-            }, function (error) {
-                alert(error);
-            })
-        }
-        else {
+        if($state.current.name == "nutritionist-list"){
+            location.reload();
+        }else{
             $state.go('nutritionist-list');
         }
     };
@@ -36,7 +30,6 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
                     url: url
                 }).then(function (resp) {
                     $scope.locationValue = resp.data.name;
-                    //window.localStorage. = resp.data.name
                     $scope.suggationTab = true;
                 }, function (error) {
                     console.log(error)
@@ -44,5 +37,9 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
             })
         }
     }
+
+/*     $scope.toggleMenu = function(){
+        $scope.status = !$scope.status;
+    } */
 
 }])

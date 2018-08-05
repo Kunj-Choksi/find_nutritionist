@@ -629,6 +629,7 @@ header .detect-location-tab:hover{
 
 /*  nutritionist-list */
 .nutritionist-list-section .wrap{
+    padding-top: 20px; 
     width: 1200px;
     margin: 0 auto; 
 }
@@ -647,7 +648,7 @@ header .detect-location-tab:hover{
 .nutritionist-profile-top{
     display: flex;
 }
-.nutritionist-profile-top .nutritionist-logo{
+.nutritionist-profile-top .nutritionist-profile-picture{
     flex: 0.5;
     padding: 5px;
 }
@@ -702,6 +703,15 @@ header .detect-location-tab:hover{
     color: #14BEF0;
     cursor: pointer;
 }
+.no-result{
+    padding: 50px;
+    background-color: #D8D8D8;
+    border: 1px solid #cac2c2;
+    width: 900px;
+}
+.no-result p{
+    font: 600 18px/18px sans-serif;
+}
 /*  nutritionist-list end*/
 
 /* nutritionist-details-profile */
@@ -747,13 +757,64 @@ header .detect-location-tab:hover{
     width: 950px;
     background-color: #fff;
     padding: 20px;
+    box-sizing: border-box;
 }
-.sub-section-two.info p{
-    font: 
+.sub-section-two-top{
+    display: flex;    
 }
-.sub-section-two.info p i{
-    margin-right: 10px;
+.sub-section-two .one-third{
+    padding: 10px;
+    flex: 3;
 }
+.sub-section-two-top .clinic-name{
+    font: 700 14px/18px sans-serif;
+    color: #14bef0;
+    cursor: pointer;
+}
+.sub-section-two-top .clinic-address{
+    font: 400 12px/18px sans-serif;
+    color: #787887;
+}
+.sub-section-two-top .clinic-photo-group{
+    margin-top: 20px;
+}
+.sub-section-two-top .clinic-photo-group img{
+    margin-right: 5px;
+    border-radius: 3px;
+    border: 1px solid #cecccc;
+    cursor: pointer;
+}
+.sub-section-two-top .one-third .aviliblity-day{
+    font: 600 14px/14px sans-serif;
+    color: #333333;
+} 
+.sub-section-two-top .one-third .aviliblity-time{
+    font: 400 12px/14px sans-serif;
+    color: #787887;
+}
+.sub-section-two-top .contact-tab{
+    margin-top: 133px;
+}
+.sub-section-two-top .contact-tab .btn{
+    padding: 10px 75px;
+}
+.sub-section-two-bottom{
+    padding: 20px;
+}
+.sub-section-two-bottom .contact-number{
+    color: #00a500;
+    font: 500 18px/20px Roboto;
+}
+.sub-section-two-bottom .note-tab p{
+    font: 400 12px/16px sans-serif;
+}
+.sub-section-two.feedback p,
+.sub-section-two.consult p,
+.sub-section-two.healthfeed p{
+    font: 400 15px/15px sans-serif;
+    padding: 91px 390px;
+}
+
 /* nutritionist-details-profile End*/
 
 /* User Dashboard Profile */

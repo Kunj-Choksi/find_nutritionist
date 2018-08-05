@@ -24,7 +24,7 @@
             <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-click="toggleSuggationmenu($event)" ng-model="query.q">
             <div class="suggation-tab" ng-show="suggationTab">
                 <ul>
-                    <li ng-repeat="s in speclilities | filter: query.q" ng-click="goTodetails(s)">
+                    <li ng-repeat="s in specialities | filter: query.q" ng-click="goTodetails(s)">
                         <a href="javascript:void(0)">{{ s.name }}</a>
                     </li>
                 </ul>
