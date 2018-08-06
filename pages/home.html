@@ -1,105 +1,103 @@
-<div ng-click="closeOpenedtabs()">
-    <!-- home-controller -->
-    <div>
-        <div ng-include="'pages/header/header-bar.html'"></div>
-    </div>
+<!-- home-controller -->
+<div>
+    <div ng-include="'pages/header/header-bar.html'"></div>
+</div>
 
-    <section class="search-box">
-        <div class="wrap">
-            <!-- wrapper -->
+<section class="search-box">
+    <div class="wrap">
+        <!-- wrapper -->
 
-            <div class="intro">
-                <h1>Your home for health</h1>
+        <div class="intro">
+            <h1>Your home for health</h1>
+        </div>
+        <div class="search-title mb10">
+            <h5>Find and Book</h5>
+        </div>
+        <div class="search-area">
+            <div ng-include="'pages/header/search-tab.html'"></div>
+        </div>
+        <div class="popular-search-list">
+            <div class="visible-list">
+                <ul>
+                    <li>Popular Search: </li>
+                    <li ng-repeat="p in populerlist" ui-sref="details" ng-click="setDetails(p)">
+                        <a>{{p}}</a>
+                    </li>
+                    <li>
+                        <a href="" class="list-dropdown" ng-click="openOtherlisttab()">
+                            other
+                            <i class="fa fa-chevron-down arrow-down" ng-class="{'rotate-me': showOtherlisttab == true}" aria-hidden="true" style="font-size: 10px"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="search-title mb10">
-                <h5>Find and Book</h5>
-            </div>
-            <div class="search-area">
-                <div ng-include="'pages/header/search-tab.html'"></div>
-            </div>
-            <div class="popular-search-list">
-                <div class="visible-list">
+
+            <div class="other-list-tab" ng-show="showOtherlisttab">
+                <div class="one-fourth">
                     <ul>
-                        <li>Popular Search: </li>
-                        <li ng-repeat="p in populerlist" ui-sref="details" ng-click="setDetails(p)">
-                            <a>{{p}}</a>
-                        </li>
-                        <li>
-                            <a href="" class="list-dropdown" ng-click="openOtherlisttab()">
-                                other
-                                <i class="fa fa-chevron-down arrow-down" ng-class="{'rotate-me': showOtherlisttab == true}" aria-hidden="true" style="font-size: 10px"></i>
-                            </a>
+                        <li class="list-head">General Physicians and Specialists</li>
+                        <li class="list-item">
+                            <a href="" class="list-item-link"></a>
                         </li>
                     </ul>
                 </div>
-
-                <div class="other-list-tab" ng-show="showOtherlisttab">
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">General Physicians and Specialists</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">Dentists</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">Alternative Medicine Practitioners</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="one-fourth">
-                        <ul>
-                            <li class="list-head">Therapists & Nutritionists</li>
-                            <li class="list-item">
-                                <a href="" class="list-item-link"></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="one-fourth">
+                    <ul>
+                        <li class="list-head">Dentists</li>
+                        <li class="list-item">
+                            <a href="" class="list-item-link"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="one-fourth">
+                    <ul>
+                        <li class="list-head">Alternative Medicine Practitioners</li>
+                        <li class="list-item">
+                            <a href="" class="list-item-link"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="one-fourth">
+                    <ul>
+                        <li class="list-head">Therapists & Nutritionists</li>
+                        <li class="list-item">
+                            <a href="" class="list-item-link"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="service-tab">
-                <a href="">
-                    <i class="fa fa-comments-o" aria-hidden="true"></i>
-                    <p>Chat with Doctors</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                    <p>Order Medicins</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                    <p>View Medical Records</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-flask" aria-hidden="true"></i>
-                    <p>Book Test</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                    <p>Read Articles</p>
-                </a>
-                <a href="">
-                    <i class="fa fa-briefcase" aria-hidden="true"></i>
-                    <p>For health Providers</p>
-                </a>
-            </div>
-
         </div>
-    </section>
 
-    <!-- wrapper -->
+        <div class="service-tab">
+            <a href="">
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                <p>Chat with Doctors</p>
+            </a>
+            <a href="">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <p>Order Medicins</p>
+            </a>
+            <a href="">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <p>View Medical Records</p>
+            </a>
+            <a href="">
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <p>Book Test</p>
+            </a>
+            <a href="">
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                <p>Read Articles</p>
+            </a>
+            <a href="">
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                <p>For health Providers</p>
+            </a>
+        </div>
+
+</section>
+
+<!-- wrapper -->
 </div>
 
 <!-- Footer -->
@@ -108,16 +106,3 @@
         <img src="" alt="">
     </div>
 </footer>
-
-
-<script>
-    $(document).ready(function () {
-        $('.list-dropdown').click(function () {
-            $(this).find(".arrow-up, .arrow-down").toggle();
-        })
-
-    });
-    $(document).click(function () {
-        $('.other-list-tab').hide();
-    })
-</script>

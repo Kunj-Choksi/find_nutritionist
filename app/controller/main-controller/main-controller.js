@@ -30,64 +30,7 @@ app.controller('mainCtrl', ['$scope', 'Data', '$state', '$http', '$rootScope', f
             alert(error)
         })
     };
-
-
-
-    $scope.toggleSuggationmenu = function (event) {
-        $scope.locationTab = false;
-        $scope.suggationTab = !($scope.suggationTab);
-        event.stopPropagation();
-    }
-
-    $scope.toggleLocationmenu = function (event) {
-        $scope.suggationTab = false;
-        $scope.locationTab = !($scope.locationTab);
-        event.stopPropagation();
-    }
-
-    window.onclick = function () {
-        if ($scope.suggationTab || $scope.locationTab) {
-            $scope.suggationTab = false;
-            $scope.locationTab = false;
-            $scope.$apply();
-        }
-    } 
-
+         
     $scope.init();
 
 }])
-
-/* app.directive("outsideClick", ['$document', '$parse', function($document, $parse) {
-  return {
-    link: function($scope, $element, $attributes) {
-     
-      var scopeExpression = $attributes.outsideClick,
-        onDocumentClick = function(event) {
-          
-          // check for flag
-          if(!$scope.closeFlag) {
-            $scope.closeFlag = true;
-            return;
-          }
-          
-          
-          var parent = event.target;
-
-          while (parent && parent !== $element[0]) {
-            parent = parent.parentNode;
-          }
-
-          if (!parent) {
-            $scope.$apply(scopeExpression);
-          }
-        }
-
-      $document.on("click", onDocumentClick);
-
-      $element.on('$destroy', function() {
-        $document.off("click", onDocumentClick);
-      });
-    }
-  }
-}]);
- */

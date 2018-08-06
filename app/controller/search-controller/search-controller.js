@@ -12,9 +12,9 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
         window.localStorage.citi_id = ($scope.query.cityId) ? $scope.query.cityId : window.localStorage.citi_id;
         window.localStorage.speciality_id = (s.id) ? s.id : "";
         window.localStorage.q = window.localStorage.speciality_id != "" ? "" : $scope.query.q;
-        if($state.current.name == "nutritionist-list"){
+        if ($state.current.name == "nutritionist-list") {
             location.reload();
-        }else{
+        } else {
             $state.go('nutritionist-list');
         }
     };
@@ -38,8 +38,27 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
         }
     }
 
-/*     $scope.toggleMenu = function(){
-        $scope.status = !$scope.status;
-    } */
 
+    document.querySelector('#locInput').addEventListener('click', toggleLocationmenu, true);
+    function toggleLocationmenu(event) {
+        $scope.suggationTab = false;
+        $scope.locationTab = !($scope.locationTab);
+        event.stopPropagation();
+    }
+
+    document.querySelector('#suggInput').addEventListener('click', toggleSuggationmenu, true);
+    function toggleSuggationmenu(event) {
+        $scope.locationTab = false;
+        $scope.suggationTab = !($scope.suggationTab);
+        event.stopPropagation();
+    }
+
+    document.addEventListener('click', function (event) {
+        if($scope.locationTab == true || $scope.suggationTab == true){
+            $scope.suggationTab = false;
+            $scope.locationTab = false;
+        }
+        
+        $scope.$apply();
+    })
 }])

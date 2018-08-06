@@ -1,14 +1,14 @@
 <div ng-controller="searchCtrl">
     <form ng-submit="goTodetails(query.q)">
         <div class="search-location">
-            <input type="text" placeholder="Location" ng-click="toggleLocationmenu($event)" ng-model="query.cityName">
+            <input type="text" placeholder="Location" ng-click="toggleLocationmenu($event)" ng-model="query.cityName" id="locInput">
             <div class="detect-location-tab" ng-click="getLocation()">
                 <div>
                     <img src="../../img/detect-location-logo.png" width="10px" height="10px" alt="">
                 </div>
                 <span>DETECT</span>
             </div>
-            <div class="location-tab" ng-show="locationTab">
+            <div class="location-tab" ng-show="locationTab" id="locationTab">
                 <ul>
                     <li ng-repeat="city in cities | filter: query.cityName" ng-click="setCity(city)">
                         <a href="javascript:void(0)"> {{ city.name }} </a>
@@ -21,8 +21,8 @@
             <span>
                 <i class="fa fa-search" aria-hidden="true" style="margin-right: 10px;"></i>
             </span>
-            <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-click="toggleSuggationmenu($event)" ng-model="query.q">
-            <div class="suggation-tab" ng-show="suggationTab">
+            <input type="text" placeholder="Search for Doctors, Clinics, hospitals" ng-click="toggleSuggationmenu($event)" ng-model="query.q" id="suggInput">
+            <div class="suggation-tab" ng-show="suggationTab" id="suggationTab">
                 <ul>
                     <li ng-repeat="s in specialities | filter: query.q" ng-click="goTodetails(s)">
                         <a href="javascript:void(0)">{{ s.name }}</a>
