@@ -1,4 +1,4 @@
-app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($scope, Data, $state, $http) {
+app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', '$rootScope', function ($scope, Data, $state, $http, $rootScope) {
 
     $scope.setCity = function (city) {
         $scope.locationTab = false;
@@ -29,7 +29,7 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
                     method: 'GET',
                     url: url
                 }).then(function (resp) {
-                    $scope.locationValue = resp.data.name;
+                    $scope.setCity(findCityid(resp.data.name));
                     $scope.suggationTab = true;
                 }, function (error) {
                     console.log(error)
@@ -54,11 +54,23 @@ app.controller('searchCtrl', ['$scope', 'Data', '$state', '$http', function ($sc
     }
 
     document.addEventListener('click', function (event) {
-        if($scope.locationTab == true || $scope.suggationTab == true){
+        if ($scope.locationTab == true || $scope.suggationTab == true) {
             $scope.suggationTab = false;
             $scope.locationTab = false;
         }
-        
+
         $scope.$apply();
     })
+
+    function findCityid(name) {
+        var cities = $rootScope.cities;
+        var city = [];
+        for (var i = 0; i < cities.length; i++) {
+            if (cities[i].name == name) {
+                city = cities[i];
+                break;
+            }
+        }
+        return city;
+    }
 }])

@@ -26,7 +26,7 @@ app.controller('nutritionistListCtrl', ['$scope', '$stateParams', 'Data', '$stat
                 $scope.length = result.contents.nutritionists.length;
                 $scope.cityName = (window.localStorage.citi_id) ? result.contents.nutritionists[0].city.name : 'Near By';
                 $scope.query.cityName = findCity($scope.query.citi_id);
-                $scope.query.q = findSpeciality($scope.query.speciality_id);
+                $scope.query.q = ($scope.query.q) ? $scope.query.q : findSpeciality($scope.query.speciality_id);
                 $scope.nutritionist = result.contents.nutritionists;
                 $scope.loaded = true;
             }
